@@ -1,0 +1,23 @@
+.header {
+    /*display: block;*/
+    /*display: inline;*/
+    width: 100%;            /* ширина */
+    height: 100px;         /* Высота */
+    /*overflow: scroll;       /* Добавляем полосы прокрутки */
+    background: #fc0;       /*цвет фона*/
+    border: 4px dotted black;
+}
+
+h1 {
+    text-align: center;
+    background-color: #999999;
+}
+
+.up_menu {
+     width: 100%;                   /* ширина */
+     background-color: 	#ffa500;       /*цвет фона*/
+/*    margin: 15px 10px;*/
+/*    margin-top: 10%;*/
+/*    padding: 2px;*/
+/*    border: 4px dotted black;*/
+}
