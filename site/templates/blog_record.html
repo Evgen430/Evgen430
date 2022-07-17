@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{article.title}}
+{% endblock %}
+
+{% block body %}
+<H1 xmlns="http://www.w3.org/1999/html">{{article.title}}</H1>
+<div>
+  <p>Дата {{ article.date.date() }}</p>
+  <p>{{article.text }}</p>
+  <a href="/blog/{{ article.id }}/delete">Удалить</a>
+  <a href="/blog/{{ article.id }}/update">Изменить</a>
+</div>
+
+{% endblock %}

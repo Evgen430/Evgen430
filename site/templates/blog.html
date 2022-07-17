@@ -7,10 +7,22 @@
 {% block body %}
 
 <H1>Блог</H1>
+<div>
+    <form method="post">
+        <input type=text" name="title" id="title" placeholder="заголовок"><br>
+        <textarea name="text" id="text" placeholder="запись"></textarea><br>
+        <input type="submit" value="отправить">
+    </form>
+</div>
 
-<form id="text" method="post">
-    <textarea></textarea>
-</form>
-<p><input form="text" type="submit" value="Отправить"></p>
+<div>
+    {% for el in articles %}
+    <div>
+        <p>Дата{{ el.date.date() }}</p>
+        <p>{{ el.title }}</p>
+        <a href="/blog/{{ el.id }}">Просмотреть</a>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
