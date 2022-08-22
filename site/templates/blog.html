@@ -7,18 +7,19 @@
 {% block body %}
 
 <H1>Блог</H1>
-<div>
-    <form method="post">
-        <input type=text" name="title" id="title" placeholder="заголовок"><br>
-        <textarea name="text" id="text" placeholder="запись"></textarea><br>
-        <input type="submit" value="отправить">
-    </form>
-</div>
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{ cat }}">{{ msg }}</div>
+{% endfor %}
+<form class="form-post" method="post">
+    <input type=text" name="title" id="title" placeholder="заголовок"><br>
+    <textarea name="text" id="text" placeholder="запись"></textarea><br>
+    <input type="submit" value="отправить">
+</form>
 
 <div>
     {% for el in articles %}
     <div>
-        <p>Дата{{ el.date.date() }}</p>
+        <p>Дата {{ el.date.date() }}</p>
         <p>{{ el.title }}</p>
         <a href="/blog/{{ el.id }}">Просмотреть</a>
     </div>

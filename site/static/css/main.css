@@ -21,3 +21,31 @@ h1 {
 /*    padding: 2px;*/
 /*    border: 4px dotted black;*/
 }
+.flash {
+    padding: 10px;
+}
+
+.flash.delete{
+    border: 1px solid red;
+    background: #F08080;
+}
+
+.flash.success {
+    border: 1px solid #21DB56;
+    background: #AEFFC5;
+}
+
+.form-post {
+    padding: 5px;
+}
+
+textarea {
+    width: 50%; /* ширина */
+    height: 200px; /* высота */
+}
+
+input {
+    width: 50%; /* ширина */
+    margin: 10px 0px;
+    background:#FFEBCD;
+}

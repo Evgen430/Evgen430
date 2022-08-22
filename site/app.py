@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import logging
@@ -6,6 +6,7 @@ import logging
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = '11111'
 db = SQLAlchemy(app)
 
 
@@ -42,6 +43,7 @@ def blog():
         try:
             db.session.add(article)
             db.session.commit()
+            flash('Сообщение отправлено', category='success')
             return redirect('/blog')
 
         except Exception:
@@ -66,6 +68,7 @@ def record_delete(id):
     try:
         db.session.delete(article)
         db.session.commit()
+        flash('Сообщение удалено', category='delete')
         return redirect('/blog')
     except:
         return "При удалении записи произошла ошибка"
